@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Feliz Dia das Mães - Para a Melhor Esposa do Mundo</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- QR Code Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="light-theme">
+    <!-- Botão música -->
+    <button id="musicToggle" class="music-toggle">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <!-- Modal Pop-up Melhor Mãe do Mundo -->
+    <div class="modal fade" id="bestMomModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content text-center p-4">
+                <div class="modal-body">
+                    <i class="fas fa-crown text-warning display-1 mb-3"></i>
+                    <h1 class="display-4 fw-bold text-dark">🌟 MELHOR MÃE DO MUNDO! 🌟</h1>
+                    <p class="fs-3 mt-3">Você é a razão do nosso sorriso todos os dias!</p>
+                    <div class="my-4">
+                        <i class="fas fa-heart text-danger fs-1 mx-2"></i>
+                        <i class="fas fa-heart text-danger fs-1 mx-2"></i>
+                        <i class="fas fa-heart text-danger fs-1 mx-2"></i>
+                    </div>
+                    <button type="button" class="btn btn-dark btn-lg px-5" data-bs-dismiss="modal">
+                        Com muito amor <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <!-- Top Bar com Toggles -->
+        <div class="row mb-4">
+            <div class="col-12 d-flex justify-content-end gap-3">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="fas fa-sun"></i>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cabeçalho -->
+        <div class="text-center mb-5" data-aos="fade-down">
+            <h1 class="display-3 fw-bold text-danger">
+                <i class="fas fa-heart text-danger"></i> 
+                Feliz Dia das Mães! 
+                <i class="fas fa-heart text-danger"></i>
+            </h1>
+            <p class="fs-4 text-muted">Para a mulher mais incrível do mundo ❤️</p>
+        </div>
+
+        <!-- Contador regressivo -->
+        <div class="row justify-content-center mb-4" data-aos="fade-up">
+            <div class="col-md-6">
+                <div class="card shadow text-center">
+                    <div class="card-body">
+                        <h4><i class="fas fa-calendar-alt"></i> Próximo Dia das Mães</h4>
+                        <div id="countdown" class="display-6 fw-bold text-danger"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mensagem principal -->
+        <div class="row justify-content-center mb-5" data-aos="fade-up">
+            <div class="col-md-10">
+                <div class="card shadow-lg border-0 message-card">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="text-center text-danger mb-4">
+                            <i class="fas fa-envelope-open-text"></i> Uma Carta Especial
+                        </h2>
+                        <div id="typewriter-text" class="typewriter fs-4 lh-base"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carrossel de Fotos -->
+        <h2 class="text-center mb-4" data-aos="fade-right">
+            <i class="fas fa-images"></i> Nossa Galeria de Memórias
+        </h2>
+        <div class="row mb-5" data-aos="zoom-in">
+            <div class="col-12">
+                <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="4"></button>
+                    </div>
+                    <div class="carousel-inner rounded shadow">
+                        <div class="carousel-item active">
+                            <div class="carousel-placeholder bg-secondary">
+                                <i class="fas fa-image fa-5x text-white-50"></i>
+                                <span class="ms-3 text-white h3">Momento Especial 1</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-placeholder bg-info">
+                                <i class="fas fa-heart fa-5x text-white-50"></i>
+                                <span class="ms-3 text-white h3">Momento Especial 2</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-placeholder bg-warning">
+                                <i class="fas fa-smile fa-5x text-white-50"></i>
+                                <span class="ms-3 text-white h3">Momento Especial 3</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-placeholder bg-success">
+                                <i class="fas fa-camera fa-5x text-white-50"></i>
+                                <span class="ms-3 text-white h3">Momento Especial 4</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-placeholder bg-danger">
+                                <i class="fas fa-gift fa-5x text-white-50"></i>
+                                <span class="ms-3 text-white h3">Momento Especial 5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Polaroids -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="polaroid text-center">
+                    <div class="polaroid-img gradient-1">
+                        <i class="fas fa-image fa-4x text-white-50"></i>
+                    </div>
+                    <div class="polaroid-caption">❤️ Amor em cada detalhe ❤️</div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="polaroid text-center">
+                    <div class="polaroid-img gradient-2">
+                        <i class="fas fa-star fa-4x text-white-50"></i>
+                    </div>
+                    <div class="polaroid-caption">✨ Você é minha estrela ✨</div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="polaroid text-center">
+                    <div class="polaroid-img gradient-3">
+                        <i class="fas fa-crown fa-4x text-white-50"></i>
+                    </div>
+                    <div class="polaroid-caption">👑 Nossa Rainha 👑</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jogo da Memória -->
+        <h2 class="text-center mb-4" data-aos="fade-right">
+            <i class="fas fa-puzzle-piece"></i> Jogo da Memória dos Momentos
+        </h2>
+        <div class="row mb-5" data-aos="fade-up">
+            <div class="col-12">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <button id="resetGame" class="btn btn-danger">
+                                <i class="fas fa-redo"></i> Reiniciar Jogo
+                            </button>
+                            <span id="gameStatus" class="ms-3 badge bg-success fs-6">Encontre os pares!</span>
+                        </div>
+                        <div id="memoryGame" class="row g-3 memory-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Assinatura Digital -->
+        <div class="row justify-content-center mb-5" data-aos="fade-right">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h3 class="text-center"><i class="fas fa-pen"></i> Assinatura das Crianças</h3>
+                        <canvas id="signatureCanvas" class="signature-canvas"></canvas>
+                        <div class="text-center mt-3">
+                            <button id="clearSignature" class="btn btn-secondary">
+                                <i class="fas fa-eraser"></i> Limpar
+                            </button>
+                            <button id="saveSignature" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Salvar Assinatura
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QR Code e Compartilhamento -->
+        <div class="row justify-content-center mb-5" data-aos="fade-up">
+            <div class="col-md-6">
+                <div class="card shadow text-center">
+                    <div class="card-body">
+                        <h3><i class="fas fa-qrcode"></i> Acesse no Celular</h3>
+                        <div id="qrcode" class="d-flex justify-content-center mb-3"></div>
+                        <div id="qrPrintVersion" style="display: none;"></div>
+                        <div class="mt-3">
+                            <button id="printQRCode" class="btn btn-danger btn-lg mb-2">
+                                <i class="fas fa-print"></i> Imprimir QR Code
+                            </button>
+                            <button id="downloadQRCode" class="btn btn-success btn-lg">
+                                <i class="fas fa-download"></i> Baixar QR Code
+                            </button>
+                        </div>
+                        <button id="shareWhatsApp" class="btn btn-success btn-lg mt-2">
+                            <i class="fab fa-whatsapp"></i> Compartilhar no WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="text-center mt-5 pt-4 border-top border-danger">
+            <p class="fs-3">
+                <i class="fas fa-heart text-danger"></i>
+                <i class="fas fa-heart text-danger"></i>
+                <i class="fas fa-heart text-danger"></i>
+                Com todo amor do mundo 
+                <i class="fas fa-heart text-danger"></i>
+                <i class="fas fa-heart text-danger"></i>
+                <i class="fas fa-heart text-danger"></i>
+            </p>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

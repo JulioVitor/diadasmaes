@@ -1,0 +1,431 @@
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Temas */
+body.light-theme {
+    background: linear-gradient(135deg, #ffe6f0 0%, #ffd9e8 100%);
+    color: #333;
+}
+
+body.dark-theme {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #eee;
+}
+
+body.dark-theme .card,
+body.dark-theme .polaroid,
+body.dark-theme .message-card {
+    background: #2d2d44 !important;
+    color: #eee !important;
+}
+
+body.dark-theme .text-muted {
+    color: #bbb !important;
+}
+
+body.dark-theme .card-body {
+    background: #2d2d44;
+}
+
+body.dark-theme .modal-content {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+}
+
+/* Corações flutuantes */
+/* Corações flutuantes - Versão Premium */
+.floating-heart {
+    position: fixed;
+    font-size: 1.5rem;
+    pointer-events: none;
+    z-index: 999;
+    animation: floatUpHeart 6s ease-in forwards;
+    opacity: 0;
+}
+
+@keyframes floatUpHeart {
+    0% {
+        transform: translateY(100vh) scale(0.5) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(1.2) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Corações pulsantes */
+.pulse-heart {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Corações duplos */
+.double-heart {
+    position: relative;
+}
+
+/* Chuva de corações */
+.rain-heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 997;
+    animation: rainHeart linear forwards;
+}
+
+@keyframes rainHeart {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Corações giratórios */
+.spin-heart {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Efeito de onda de corações */
+@keyframes heartWave {
+    0% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(50px) scale(1.3);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(100px) scale(0);
+        opacity: 0;
+    }
+}
+
+.wave-heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    animation: heartWave 2s ease-out forwards;
+}
+/* Pétalas flutuantes */
+.petal {
+    position: fixed;
+    pointer-events: none;
+    z-index: 998;
+    animation: fallRose linear forwards;
+    font-size: 25px;
+}
+
+@keyframes fallRose {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Estilos específicos para cada rosa */
+.rose-red {
+    color: #ff1744;
+    text-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+.rose-pink {
+    color: #ff69b4;
+    text-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+.rose-white {
+    color: #fff5f5;
+    text-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+.rose-yellow {
+    color: #ffd700;
+    text-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+/* Efeito de pétalas caindo mais realista */
+@keyframes petalFall {
+    0% {
+        transform: translateY(-10vh) translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    25% {
+        transform: translateY(25vh) translateX(-20px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(50vh) translateX(20px) rotate(180deg);
+    }
+    75% {
+        transform: translateY(75vh) translateX(-10px) rotate(270deg);
+    }
+    100% {
+        transform: translateY(100vh) translateX(10px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.petal-real {
+    position: fixed;
+    pointer-events: none;
+    z-index: 998;
+    animation: petalFall linear forwards;
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* Efeito máquina de escrever */
+.typewriter {
+    overflow: hidden;
+    border-right: 3px solid #ff69b4;
+    white-space: pre-wrap;
+    margin: 0 auto;
+    letter-spacing: 2px;
+    animation: blinkCursor 0.75s step-end infinite;
+    font-family: 'Courier New', monospace;
+    min-height: 200px;
+}
+
+@keyframes blinkCursor {
+    from, to { border-color: transparent }
+    50% { border-color: #ff69b4 }
+}
+
+/* Estilo Polaroid */
+.polaroid {
+    background: white;
+    padding: 15px 15px 35px 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.polaroid:hover {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.polaroid-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.gradient-1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-2 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.gradient-3 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.polaroid-caption {
+    margin-top: 12px;
+    text-align: center;
+    font-family: 'Cursive', 'Segoe UI', sans-serif;
+    color: #555;
+}
+
+/* Canvas da assinatura */
+.signature-canvas {
+    border: 2px dashed #ff69b4;
+    border-radius: 10px;
+    cursor: crosshair;
+    background: white;
+    width: 100%;
+    height: 200px;
+}
+
+/* Carrossel */
+.carousel-placeholder {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Jogo da memória */
+.memory-card {
+    aspect-ratio: 1;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.memory-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.memory-card .front,
+.memory-card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.memory-card .front {
+    background: #ff6b9d;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.memory-card .back {
+    background: #ffd9e8;
+    color: #ff6b9d;
+    transform: rotateY(0);
+}
+
+body.dark-theme .memory-card .back {
+    background: #2d2d44;
+    color: #ff6b9d;
+}
+
+/* Toggle switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #ff6b9d;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Botão música */
+.music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ff6b9d;
+    color: white;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+    background: #ff3b7d;
+}
+
+/* Modal */
+.modal-content {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    border: none;
+    border-radius: 30px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .polaroid-img {
+        height: 200px;
+    }
+    .carousel-placeholder {
+        height: 250px;
+    }
+    .memory-grid {
+        gap: 10px;
+    }
+    .typewriter {
+        font-size: 1.2rem !important;
+    }
+}
