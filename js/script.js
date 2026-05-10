@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(updateCountdown, 3600000);
 
     // 4. Máquina de escrever
-    const fullText = `Minha amada esposa,\n\nNeste Dia das Mães, quero te lembrar o quanto você é especial. Você não é apenas a melhor mãe que nossos filhos poderiam ter, mas também a mulher que ilumina minha vida todos os dias.\n\nSua dedicação, seu carinho e seu amor incondicional transformam nossa família em um lar cheio de alegria. Cada sorriso seu é um presente que guardo no coração.\n\nObrigado por ser essa mãe maravilhosa, por cuidar de nós com tanto amor e por tornar cada momento inesquecível.\n\nTe amo hoje, amanhã e para sempre! 💝\n\nCom todo o meu amor,\nSeu eterno admirador`;
+    const fullText = `Minha amada esposa,\n\nNeste Dia das Mães, quero te lembrar o quanto você é especial. Você não é apenas a melhor mãe que nossa filha poderiam ter, mas também a mulher que ilumina minha vida todos os dias.\n\nSua dedicação, seu carinho e seu amor incondicional transformam nossa família em um lar cheio de alegria. Cada sorriso seu é um presente que guardo no coração.\n\nObrigado por ser essa mãe maravilhosa, por cuidar de nós com tanto amor e por tornar cada momento inesquecível.\n\nTe amo hoje, amanhã e para sempre! 💝\n\nCom todo o meu amor,\nSeu eterno admirador`;
     let index = 0;
     const typewriterElement = document.getElementById('typewriter-text');
 
